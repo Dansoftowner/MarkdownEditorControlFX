@@ -21,6 +21,10 @@ class EditorArea extends VirtualizedScrollPane<CodeArea> {
         return this.getContent().textProperty();
     }
 
+    public void setText(String value) {
+        this.getContent().replaceText(value);
+    }
+
     public ScrollBar getVBar() {
         try {
             Field field = VirtualizedScrollPane.class.getDeclaredField("vbar");

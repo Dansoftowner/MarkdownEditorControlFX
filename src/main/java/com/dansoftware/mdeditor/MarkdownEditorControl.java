@@ -1,9 +1,6 @@
 package com.dansoftware.mdeditor;
 
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.*;
 import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
 
@@ -18,6 +15,10 @@ public class MarkdownEditorControl extends Control {
     };
 
     private final BooleanProperty autoScroll = new SimpleBooleanProperty();
+
+    private final BooleanProperty toolbarVisible = new SimpleBooleanProperty();
+
+    private final StringProperty markdown = new SimpleStringProperty();
 
     public MarkdownEditorControl() {
         this(ViewMode.BOTH);
@@ -54,6 +55,30 @@ public class MarkdownEditorControl extends Control {
 
     public void setAutoScroll(boolean autoScroll) {
         this.autoScroll.set(autoScroll);
+    }
+
+    public boolean isToolbarVisible() {
+        return toolbarVisible.get();
+    }
+
+    public BooleanProperty toolbarVisibleProperty() {
+        return toolbarVisible;
+    }
+
+    public void setToolbarVisible(boolean toolbarVisible) {
+        this.toolbarVisible.set(toolbarVisible);
+    }
+
+    public String getMarkdown() {
+        return markdown.get();
+    }
+
+    public StringProperty markdownProperty() {
+        return markdown;
+    }
+
+    public void setMarkdown(String markdown) {
+        this.markdown.set(markdown);
     }
 
     public enum ViewMode {

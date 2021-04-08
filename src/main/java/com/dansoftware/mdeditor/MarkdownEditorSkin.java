@@ -1,5 +1,7 @@
 package com.dansoftware.mdeditor;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.scene.control.SkinBase;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.Priority;
@@ -16,7 +18,7 @@ public class MarkdownEditorSkin extends SkinBase<MarkdownEditorControl> {
 
     protected MarkdownEditorSkin(MarkdownEditorControl control) {
         super(control);
-        this.toolbar = new Toolbar(control);
+        this.toolbar = buildToolbar(control);
         this.editorArea = buildEditorArea(control);
         this.previewArea = buildPreviewArea(control);
         this.splitPane = buildSplitPane();
@@ -36,6 +38,9 @@ public class MarkdownEditorSkin extends SkinBase<MarkdownEditorControl> {
     private void addListeners(MarkdownEditorControl control) {
         control.viewModeProperty().addListener((observable, oldValue, newValue) -> suitUI(newValue));
         control.autoScrollProperty().addListener((observable, oldValue, newValue) -> autoScrollChange(newValue));
+
+        editorArea.textProperty().addListener((observable, oldValue, newValue) -> control.setMarkdown(newValue));
+        control.markdownProperty().addListener((observable, oldValue, newValue) -> editorArea.setText(newValue));
     }
 
     private void setupBindings() {
@@ -48,6 +53,13 @@ public class MarkdownEditorSkin extends SkinBase<MarkdownEditorControl> {
         previewArea.markdownProperty().set("");
     }
 
+    private Toolbar buildToolbar(MarkdownEditorControl control) {
+        var toolbar = new Toolbar(control);
+        toolbar.visibleProperty().bind(control.toolbarVisibleProperty());
+        toolbar.managedProperty().bind(control.toolbarVisibleProperty());
+        return toolbar;
+    }
+
     private SplitPane buildSplitPane() {
         var splitPane = new SplitPane();
         VBox.setVgrow(splitPane, Priority.ALWAYS);
@@ -55,7 +67,9 @@ public class MarkdownEditorSkin extends SkinBase<MarkdownEditorControl> {
     }
 
     private EditorArea buildEditorArea(MarkdownEditorControl control) {
-        return new EditorArea();
+        EditorArea editorArea = new EditorArea();
+        editorArea.setText(control.getMarkdown());
+        return editorArea;
     }
 
     private PreviewArea buildPreviewArea(MarkdownEditorControl control) {
