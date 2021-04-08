@@ -5,6 +5,18 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
+def moduleName = "markdown.editor.control.fxs"
+
+compileJava {
+    inputs.property("moduleName", moduleName)
+    doFirst {
+        options.compilerArgs = [
+                '--module-path', classpath.asPath,
+        ]
+        classpath = files()
+    }
+}
+
 repositories {
     mavenCentral()
     maven { url "http://sandec.bintray.com/repo"}
