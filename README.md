@@ -84,7 +84,7 @@ In this mode, only the preview-area is visible.
 
 ![Screenshot](screenshots/PreviewOnly.jpg)
 
-#### 3. Editor and preview (`ViewMode.BOTH`)
+### 3. Editor and preview (`ViewMode.BOTH`)
 
 ![Screenshot](screenshots/EditorAndPreview.jpg)
 
