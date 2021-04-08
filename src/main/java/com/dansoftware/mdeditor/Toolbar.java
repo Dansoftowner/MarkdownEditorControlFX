@@ -5,6 +5,7 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
+import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;
 import javafx.geometry.NodeOrientation;
 import javafx.scene.Node;
@@ -43,7 +44,43 @@ class Toolbar extends HBox {
         }
 
         private void buildUI() {
+            getItems().add(buildBoldItem());
+            getItems().add(buildItalicItem());
+            getItems().add(buildStrikeThroughItem());
+            getItems().add(buildMonospaceItem());
+        }
 
+        private Button buildBoldItem() {
+            return buildFormatterButton("**%s**", MaterialDesignIcon.FORMAT_BOLD);
+        }
+
+        private Button buildItalicItem() {
+            return buildFormatterButton("*%s*", MaterialDesignIcon.FORMAT_ITALIC);
+        }
+
+        private Button buildStrikeThroughItem() {
+            return buildFormatterButton("~~%s~~", MaterialDesignIcon.FORMAT_STRIKETHROUGH);
+        }
+
+        private Button buildMonospaceItem() {
+            return buildFormatterButton("`%s`", MaterialDesignIcon.CODE_TAGS);
+        }
+
+        private Button buildFormatterButton(String pattern, MaterialDesignIcon icon) {
+            Button button = buildButton(new MaterialDesignIconView(icon));
+            button.setOnAction(e -> {
+                IndexRange range = control.selectionProperty().getValue();
+                String selected = control.selectedTextProperty().getValue();
+                control.replaceText(range.getStart(), range.getEnd(), String.format(pattern, selected));
+            });
+            return button;
+        }
+
+        private Button buildButton(GlyphIcon<?> icon) {
+            Button button = new Button();
+            button.setGraphic(icon);
+            button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            return button;
         }
 
     }
