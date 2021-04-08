@@ -5,9 +5,12 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-def moduleName = "markdown.editor.control.fxs"
+def moduleName = "markdown.editor.control.fx"
 
 compileJava {
+    // placing dependencies to the module path
+    // https://discuss.gradle.org/t/gradle-doesnt-add-modules-to-module-path-during-compile/27382
+
     inputs.property("moduleName", moduleName)
     doFirst {
         options.compilerArgs = [
