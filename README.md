@@ -1,6 +1,7 @@
 # MarkdownEditorControlFX
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Dansoftowner/MarkdownEditorControlFX)
+[![](https://jitpack.io/v/Dansoftowner/MarkdownEditorControlFX.svg)](https://jitpack.io/#Dansoftowner/MarkdownEditorControlFX)
 ![GitHub issues](https://img.shields.io/github/issues/Dansoftowner/MarkdownEditorControlFX)
 ![GitHub last commit](https://img.shields.io/github/last-commit/DansoftOwner/MarkdownEditorControlFX)
 ![GitHub](https://img.shields.io/github/license/Dansoftowner/MarkdownEditorControlFX)
