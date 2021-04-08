@@ -1,7 +1,9 @@
 package com.dansoftware.mdeditor;
 
 import javafx.beans.property.*;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Control;
+import javafx.scene.control.IndexRange;
 import javafx.scene.control.Skin;
 
 public class MarkdownEditorControl extends Control {
@@ -73,6 +75,14 @@ public class MarkdownEditorControl extends Control {
 
     public void setMarkdown(String markdown) {
         this.markdown.set(markdown);
+    }
+
+    public ObservableValue<IndexRange> selectionProperty() {
+        return ((MarkdownEditorSkin) getSkin()).selectionProperty();
+    }
+
+    public ObservableValue<String> selectedTextProperty() {
+        return ((MarkdownEditorSkin) getSkin()).selectedTextProperty();
     }
 
     public enum ViewMode {

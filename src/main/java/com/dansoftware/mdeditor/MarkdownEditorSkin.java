@@ -2,6 +2,8 @@ package com.dansoftware.mdeditor;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.scene.control.IndexRange;
 import javafx.scene.control.SkinBase;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.Priority;
@@ -94,4 +96,11 @@ public class MarkdownEditorSkin extends SkinBase<MarkdownEditorControl> {
         }
     }
 
+    public ObservableValue<IndexRange> selectionProperty() {
+        return editorArea.selectionProperty();
+    }
+
+    public ObservableValue<String> selectedTextProperty() {
+        return editorArea.selectedTextProperty();
+    }
 }

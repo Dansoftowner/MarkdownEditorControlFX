@@ -1,8 +1,10 @@
 package com.dansoftware.mdeditor;
 
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
+import javafx.scene.control.IndexRange;
 import javafx.scene.control.ScrollBar;
 import org.fxmisc.flowless.VirtualizedScrollPane;
 import org.fxmisc.richtext.CodeArea;
@@ -16,6 +18,14 @@ class EditorArea extends VirtualizedScrollPane<CodeArea> {
     EditorArea() {
         super(buildCodeArea());
         getStyleClass().add(STYLE_CLASS);
+    }
+
+    public ObservableValue<IndexRange> selectionProperty() {
+        return getContent().selectionProperty();
+    }
+
+    public ObservableValue<String> selectedTextProperty() {
+        return getContent().selectedTextProperty();
     }
 
     public BooleanProperty editableProperty() {
