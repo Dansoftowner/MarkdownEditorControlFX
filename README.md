@@ -1,5 +1,71 @@
 # MarkdownEditorControlFX
 
-A Markdown-editor control for **JavaFX**. Inspired by IntelliJ's markdown editor.
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Dansoftowner/MarkdownEditorControlFX)
+![GitHub issues](https://img.shields.io/github/issues/Dansoftowner/MarkdownEditorControlFX)
+![GitHub last commit](https://img.shields.io/github/last-commit/DansoftOwner/MarkdownEditorControlFX)
+![GitHub](https://img.shields.io/github/license/Dansoftowner/MarkdownEditorControlFX)
 
-*Documentation coming soon*
+**An advanced markdown-editor control for JavaFX.**
+
+![Demo gif](screenshots/demo-dark.gif)
+
+# Features
+
+* Three **view modes** : `EDITOR_ONLY`, `PREVIEW_ONLY`, `BOTH`
+* Formatting toolbar items: `bold`, `italic`, `strikethrough`, `monospaced`
+* Live preview
+* Styleable through `JavaFX CSS`
+* ...and more
+
+### TODO
+* Syntax highlighting in the `editor-area`
+* Internationalization support
+* Find dialog
+
+Contributions are welcome!
+
+# Download
+
+#### Maven example
+....
+
+#### Gradle example
+....
+
+# View modes
+
+As mentioned, the control supports multiple view modes.  
+Each view mode is represented by the enum: `com.dansoftware.mdeditor.MarkdownEditorControl.ViewMode`.  
+It can be set using the `MarkdownEditorControl#setViewMode` method.
+
+#### 1. Editor only (`ViewMode.EDITOR_ONLY`)
+In this mode, only the editor-area is visible.
+
+![Screenshot](screenshots/EditorOnly.jpg)
+
+
+#### 2. Preview only (`ViewMode.PREVIEW_ONLY`)
+In this mode, only the preview-area is visible.
+
+![Screenshot](screenshots/PreviewOnly.jpg)
+
+#### 3. Editor and preview (`ViewMode.BOTH`)
+
+![Screenshot](screenshots/EditorAndPreview.jpg)
+
+# Demos
+
+* [LightDemo](src/test/java/com/dansoftware/mdeditor/LightDemo.java) - Light-style example
+* [DarkDemo](src/test/java/com/dansoftware/mdeditor/DarkDemo.java) - Dark-style example
+
+# Used libraries
+
+* [markdown-javafx-renderer](https://github.com/JPro-one/markdown-javafx-renderer) - JavaFX markdown renderer
+* [RichTextFX](https://github.com/FXMisc/RichTextFX) - Rich-text area for JavaFX
+* [FontAwesomeFX](https://bitbucket.org/Jerady/fontawesomefx/src/master/) - for the icons
+
+Used libraries for the demos:
+* [JMetro](https://www.pixelduke.com/java-javafx-theme-jmetro/)
+
+# License
+**Apache 2.0**
