@@ -14,8 +14,6 @@ public class MarkdownEditorControl extends Control {
         }
     };
 
-    private final BooleanProperty autoScroll = new SimpleBooleanProperty();
-
     private final BooleanProperty toolbarVisible = new SimpleBooleanProperty();
 
     private final StringProperty markdown = new SimpleStringProperty();
@@ -43,22 +41,6 @@ public class MarkdownEditorControl extends Control {
 
     public ObjectProperty<ViewMode> viewModeProperty() {
         return viewMode;
-    }
-
-    public boolean isAutoScroll() {
-        return autoScroll.get();
-    }
-
-    public BooleanProperty autoScrollProperty() {
-        return autoScroll;
-    }
-
-    public void setAutoScroll(boolean autoScroll) {
-        this.autoScroll.set(autoScroll);
-    }
-
-    public boolean isToolbarVisible() {
-        return toolbarVisible.get();
     }
 
     public BooleanProperty toolbarVisibleProperty() {

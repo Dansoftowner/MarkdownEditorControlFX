@@ -63,17 +63,9 @@ class Toolbar extends HBox {
         }
 
         private void buildUI() {
-            getItems().add(buildAutoScrollItem());
-            getItems().add(new Separator());
             getItems().add(buildPreviewItem());
             getItems().add(buildSplitItem());
             getItems().add(buildEditorItem());
-        }
-
-        private Node buildAutoScrollItem() {
-            final RadioButton radioButton = buildToggleButton(new MaterialDesignIconView(MaterialDesignIcon.ARROW_UP));
-            control.autoScrollProperty().bind(radioButton.selectedProperty());
-            return radioButton;
         }
 
         private Node buildPreviewItem() {

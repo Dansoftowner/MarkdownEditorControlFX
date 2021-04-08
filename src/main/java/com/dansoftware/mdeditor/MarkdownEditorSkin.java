@@ -37,7 +37,6 @@ public class MarkdownEditorSkin extends SkinBase<MarkdownEditorControl> {
 
     private void addListeners(MarkdownEditorControl control) {
         control.viewModeProperty().addListener((observable, oldValue, newValue) -> suitUI(newValue));
-        control.autoScrollProperty().addListener((observable, oldValue, newValue) -> autoScrollChange(newValue));
 
         editorArea.textProperty().addListener((observable, oldValue, newValue) -> control.setMarkdown(newValue));
         control.markdownProperty().addListener((observable, oldValue, newValue) -> editorArea.setText(newValue));
@@ -91,14 +90,6 @@ public class MarkdownEditorSkin extends SkinBase<MarkdownEditorControl> {
                 setupBindings();
                 splitPane.getItems().setAll(editorArea, previewArea);
                 break;
-        }
-    }
-
-    private void autoScrollChange(boolean autoScroll) {
-        if (autoScroll) {
-            //TODO: implement auto-scroll
-            //ScrollBar editorBar = editorArea.getVBar();
-            //editorBar.valueProperty().bindBidirectional(previewArea.vvalueProperty());
         }
     }
 
