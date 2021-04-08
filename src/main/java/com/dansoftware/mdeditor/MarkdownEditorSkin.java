@@ -103,4 +103,8 @@ public class MarkdownEditorSkin extends SkinBase<MarkdownEditorControl> {
     public ObservableValue<String> selectedTextProperty() {
         return editorArea.selectedTextProperty();
     }
+
+    public void replaceText(int start, int end, String replacement) {
+        editorArea.getContent().replaceText(start, end, replacement);
+    }
 }

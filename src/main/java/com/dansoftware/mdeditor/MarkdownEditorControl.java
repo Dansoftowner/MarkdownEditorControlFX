@@ -85,6 +85,10 @@ public class MarkdownEditorControl extends Control {
         return ((MarkdownEditorSkin) getSkin()).selectedTextProperty();
     }
 
+    public void replaceText(int start, int end, String replacement) {
+        ((MarkdownEditorSkin)getSkin()).replaceText(start, end, replacement);
+    }
+
     public enum ViewMode {
         EDITOR_ONLY, PREVIEW_ONLY, BOTH
     }
