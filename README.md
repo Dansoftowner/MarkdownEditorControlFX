@@ -24,6 +24,9 @@
 
 Contributions are welcome!
 
+# Requirements
+Java 11 or higher
+
 # Download
 
 #### Maven example
