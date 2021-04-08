@@ -31,10 +31,36 @@ Java 11 or higher
 # Download
 
 #### Maven example
-....
+```xml
+<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+</repositories>
+```
+
+```xml
+<dependency>
+	    <groupId>com.github.Dansoftowner</groupId>
+	    <artifactId>MarkdownEditorControlFX</artifactId>
+	    <version>0.6.0</version>
+</dependency>
+```
 
 #### Gradle example
-....
+```groovy
+repositories {
+	...
+	maven { url 'https://jitpack.io' }
+}
+```
+
+```groovy
+dependencies {
+	implementation 'com.github.Dansoftowner:MarkdownEditorControlFX:0.6.0'
+}
+```
 
 # View modes
 
