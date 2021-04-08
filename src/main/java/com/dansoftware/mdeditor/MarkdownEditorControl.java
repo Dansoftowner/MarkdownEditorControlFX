@@ -17,7 +17,7 @@ public class MarkdownEditorControl extends Control {
     };
 
     private final BooleanProperty toolbarVisible = new SimpleBooleanProperty();
-    private final StringProperty markdown = new SimpleStringProperty();
+    private final StringProperty markdown = new SimpleStringProperty("");
     private final BooleanProperty editable = new SimpleBooleanProperty(true);
 
     public MarkdownEditorControl() {
