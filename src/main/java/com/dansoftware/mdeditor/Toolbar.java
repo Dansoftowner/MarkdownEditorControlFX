@@ -107,21 +107,22 @@ class Toolbar extends HBox {
         }
 
         private Node buildPreviewItem() {
-            return buildToggleButton(MarkdownEditorControl.ViewMode.PREVIEW_ONLY, new MaterialDesignIconView(MaterialDesignIcon.IMAGE));
+            return buildToggleButton("preview-only-item", MarkdownEditorControl.ViewMode.PREVIEW_ONLY, new MaterialDesignIconView(MaterialDesignIcon.IMAGE));
         }
 
         private Node buildSplitItem() {
-            return buildToggleButton(MarkdownEditorControl.ViewMode.BOTH, new MaterialDesignIconView(MaterialDesignIcon.DIVISION_BOX));
+            return buildToggleButton("both-item", MarkdownEditorControl.ViewMode.BOTH, new MaterialDesignIconView(MaterialDesignIcon.DIVISION_BOX));
         }
 
         private Node buildEditorItem() {
-            return buildToggleButton(MarkdownEditorControl.ViewMode.EDITOR_ONLY, new FontAwesomeIconView(FontAwesomeIcon.BARS));
+            return buildToggleButton("editor-only-item", MarkdownEditorControl.ViewMode.EDITOR_ONLY, new FontAwesomeIconView(FontAwesomeIcon.BARS));
         }
 
         //TODO: tooltips
 
-        private RadioButton buildToggleButton(GlyphIcon<?> icon) {
+        private RadioButton buildToggleButton(String id, GlyphIcon<?> icon) {
             RadioButton radioButton = new RadioButton();
+            radioButton.setId(id);
             radioButton.setGraphic(icon);
             radioButton.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
             radioButton.getStyleClass().remove("radio-button");
@@ -129,8 +130,8 @@ class Toolbar extends HBox {
             return radioButton;
         }
 
-        private RadioButton buildToggleButton(MarkdownEditorControl.ViewMode viewMode, GlyphIcon<?> icon) {
-            RadioButton radioButton = buildToggleButton(icon);
+        private RadioButton buildToggleButton(String id, MarkdownEditorControl.ViewMode viewMode, GlyphIcon<?> icon) {
+            RadioButton radioButton = buildToggleButton(id, icon);
             radioButton.setToggleGroup(toggleGroup);
             radioButton.setOnAction(e -> control.setViewMode(viewMode));
             radioButton.setSelected(control.getViewMode() == viewMode);
