@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import jfxtras.styles.jmetro.JMetro;
 import jfxtras.styles.jmetro.Style;
 
-public class DarkDemo extends Application {
+public class LightDemo extends Application {
 
     private static final String DEFAULT_MD = "# Heading 1";
 
@@ -29,8 +29,8 @@ public class DarkDemo extends Application {
     }
 
     private void styleUI(Scene scene) {
-        new JMetro(Style.DARK).setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("/mdfx-dark.css").toExternalForm());
+        new JMetro(Style.LIGHT).setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("/mdfx-light.css").toExternalForm());
     }
 
     private void addKeyDetections(Scene scene, MarkdownEditorControl control) {

@@ -121,7 +121,7 @@
 /* The MDFXNode styles */
 
 * {
-    -mdfx-font-color: white;
+    -mdfx-font-color: #3b3b3b;
     -mdfx-border-color-1: #888;
 
     -mdfx-bg-color-1: #ccc;
@@ -141,7 +141,7 @@
 }
 
 * .markdown-link {
-    -fx-fill: #0e80d4;
+    -fx-fill: #2121d0;
 }
 
 .markdown-link-hover {
@@ -154,15 +154,15 @@
 */
 
 .markdown-edit-area .code-area {
-    -fx-background-color: #232425;
+    -fx-background-color: #f5f3f3;
 }
 
 .markdown-edit-area * {
-    -fx-highlight-fill: #214283;
+    -fx-highlight-fill: #4370c6;
 }
 
 .markdown-edit-area .caret {
-    -fx-stroke: whitesmoke;
+    -fx-stroke: #222222;
 }
 
 /* https://github.com/FXMisc/RichTextFX/issues/737 */
@@ -170,7 +170,7 @@
 .markdown-edit-area .styled-text-area .text {
     -fx-font-family: "Jetbrains Mono";
     -fx-font-size: 15px;
-    -fx-fill: #A9B7C6;
+    -fx-fill: #101010;
 }
 
 /**********************************************************************
@@ -183,7 +183,7 @@
 }
 
 .markdown-editor-toolbar .toggle-button > .glyph-icon, .markdown-editor-toolbar .button > .glyph-icon {
-    -fx-fill: white;
+    -fx-fill: black;
 }
 
 
