@@ -95,7 +95,7 @@ In this mode, only the preview-area is visible.
 
 # Used libraries
 
-* [markdown-javafx-renderer](https://github.com/JPro-one/markdown-javafx-renderer) - JavaFX markdown renderer
+* [markdown-javafx-renderer](https://github.com/JPro-one/markdown-javafx-renderer) - JavaFX markdown renderer based on [flexmark](https://github.com/vsch/flexmark-java)
 * [RichTextFX](https://github.com/FXMisc/RichTextFX) - Rich-text area for JavaFX
 * [FontAwesomeFX](https://bitbucket.org/Jerady/fontawesomefx/src/master/) - for the icons
 
