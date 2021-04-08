@@ -1,4 +1,4 @@
-package com.dansoftware.mdeditor.test;
+package com.dansoftware.mdeditor;
 
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.ScrollPane;

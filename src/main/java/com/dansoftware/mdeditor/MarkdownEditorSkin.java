@@ -1,4 +1,4 @@
-package com.dansoftware.mdeditor.test;
+package com.dansoftware.mdeditor;
 
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.IndexRange;

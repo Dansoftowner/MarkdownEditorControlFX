@@ -1,5 +1,5 @@
 module markdown.editor.control.fx {
-    exports com.dansoftware.mdeditor.test;
+    exports com.dansoftware.mdeditor;
     requires mdfx;
     requires javafx.base;
     requires javafx.graphics;

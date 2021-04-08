@@ -1,4 +1,4 @@
-package com.dansoftware.mdeditor.test;
+package com.dansoftware.mdeditor;
 
 import de.jensd.fx.glyphs.GlyphIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
