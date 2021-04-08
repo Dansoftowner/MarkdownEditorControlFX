@@ -52,7 +52,12 @@ Java 11 or higher
 ```groovy
 repositories {
 	...
-	maven { url 'https://jitpack.io' }
+    // For MarkdownEditorControl
+    maven { url 'https://jitpack.io' }
+    
+    // For some of it's dependencies
+    maven { url "http://sandec.bintray.com/repo"}
+    maven { url "https://dl.bintray.com/jerady/maven" }
 }
 ```
 
