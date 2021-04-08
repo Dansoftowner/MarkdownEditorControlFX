@@ -1,4 +1,4 @@
-package com.dansoftware.mdeditor;
+package com.dansoftware.mdeditor.test;
 
 import com.sandec.mdfx.MDFXNode;
 import javafx.beans.property.StringProperty;

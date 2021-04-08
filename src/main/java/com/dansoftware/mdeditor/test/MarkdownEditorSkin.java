@@ -1,7 +1,5 @@
-package com.dansoftware.mdeditor;
+package com.dansoftware.mdeditor.test;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.IndexRange;
 import javafx.scene.control.SkinBase;

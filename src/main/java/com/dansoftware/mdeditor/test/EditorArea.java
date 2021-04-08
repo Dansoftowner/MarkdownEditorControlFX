@@ -1,4 +1,4 @@
-package com.dansoftware.mdeditor;
+package com.dansoftware.mdeditor.test;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;

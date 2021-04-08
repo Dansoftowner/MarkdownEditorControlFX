@@ -1,5 +1,6 @@
-package com.dansoftware.mdeditor;
+package com.dansoftware.mdeditor.test.test;
 
+import com.dansoftware.mdeditor.test.MarkdownEditorControl;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
