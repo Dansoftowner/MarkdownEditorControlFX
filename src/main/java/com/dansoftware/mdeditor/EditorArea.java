@@ -1,5 +1,6 @@
 package com.dansoftware.mdeditor;
 
+import javafx.beans.property.BooleanProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.scene.control.ScrollBar;
@@ -15,6 +16,10 @@ class EditorArea extends VirtualizedScrollPane<CodeArea> {
     EditorArea() {
         super(buildCodeArea());
         getStyleClass().add(STYLE_CLASS);
+    }
+
+    public BooleanProperty editableProperty() {
+        return this.getContent().editableProperty();
     }
 
     public ObservableValue<String> textProperty() {

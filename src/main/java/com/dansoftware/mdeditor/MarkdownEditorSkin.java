@@ -67,6 +67,7 @@ public class MarkdownEditorSkin extends SkinBase<MarkdownEditorControl> {
 
     private EditorArea buildEditorArea(MarkdownEditorControl control) {
         EditorArea editorArea = new EditorArea();
+        editorArea.editableProperty().bind(control.editableProperty());
         editorArea.setText(control.getMarkdown());
         return editorArea;
     }

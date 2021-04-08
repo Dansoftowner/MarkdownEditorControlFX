@@ -15,8 +15,8 @@ public class MarkdownEditorControl extends Control {
     };
 
     private final BooleanProperty toolbarVisible = new SimpleBooleanProperty();
-
     private final StringProperty markdown = new SimpleStringProperty();
+    private final BooleanProperty editable = new SimpleBooleanProperty(true);
 
     public MarkdownEditorControl() {
         this(ViewMode.BOTH);
@@ -29,6 +29,18 @@ public class MarkdownEditorControl extends Control {
     @Override
     protected Skin<?> createDefaultSkin() {
         return new MarkdownEditorSkin(this);
+    }
+
+    public boolean isEditable() {
+        return editable.get();
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable.set(editable);
+    }
+
+    public BooleanProperty editableProperty() {
+        return editable;
     }
 
     public ViewMode getViewMode() {
