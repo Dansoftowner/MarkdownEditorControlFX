@@ -4,107 +4,32 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.scene.control.ScrollBar;
-import javafx.scene.control.SplitPane;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.Control;
+import javafx.scene.control.Skin;
 
-import java.util.Objects;
+public class MarkdownEditorControl extends Control {
 
-public class MarkdownEditorControl extends VBox {
-
-    private final ObjectProperty<ViewMode> viewMode = new SimpleObjectProperty<>() {
+    private final ObjectProperty<MarkdownEditorControl.ViewMode> viewMode = new SimpleObjectProperty<>() {
         @Override
-        public ViewMode get() {
-            final ViewMode value = super.get();
-            return value == null ? ViewMode.BOTH : value;
-        }
-
-        @Override
-        protected void invalidated() {
-            suitUI(get());
+        public MarkdownEditorControl.ViewMode get() {
+            final MarkdownEditorControl.ViewMode value = super.get();
+            return value == null ? MarkdownEditorControl.ViewMode.BOTH : value;
         }
     };
 
-    private final BooleanProperty autoScroll = new SimpleBooleanProperty() {
-        @Override
-        protected void invalidated() {
-            autoScrollChange(get());
-        }
-    };
-
-    private final Toolbar toolbar;
-    private final SplitPane splitPane;
-    private final EditorArea editorArea;
-    private final PreviewArea previewArea;
+    private final BooleanProperty autoScroll = new SimpleBooleanProperty();
 
     public MarkdownEditorControl() {
         this(ViewMode.BOTH);
     }
 
     public MarkdownEditorControl(ViewMode viewMode) {
-        this.toolbar = new Toolbar(this);
-        this.editorArea = buildEditorArea();
-        this.previewArea = buildPreviewArea();
-        this.splitPane = buildSplitPane();
-        this.viewMode.set(viewMode);
-        setupBindings();
-        buildUI();
+        setViewMode(viewMode);
     }
 
-    private void setupBindings() {
-        if (!previewArea.markdownProperty().isBound())
-            previewArea.markdownProperty().bind(editorArea.textProperty());
-    }
-
-    private void clearBindings() {
-        previewArea.markdownProperty().unbind();
-        previewArea.markdownProperty().set("");
-    }
-
-    private void buildUI() {
-        getChildren().add(toolbar);
-        getChildren().add(splitPane);
-    }
-
-    private SplitPane buildSplitPane() {
-        var splitPane = new SplitPane();
-        setVgrow(splitPane, Priority.ALWAYS);
-        return splitPane;
-    }
-
-    private EditorArea buildEditorArea() {
-        return new EditorArea();
-    }
-
-    private PreviewArea buildPreviewArea() {
-        return new PreviewArea();
-    }
-
-    private void suitUI(ViewMode viewMode) {
-        Objects.requireNonNull(viewMode, "ViewMode shouldn't be null!");
-        switch (viewMode) {
-            case EDITOR_ONLY:
-                clearBindings();
-                splitPane.getItems().setAll(editorArea);
-                break;
-            case PREVIEW_ONLY:
-                setupBindings();
-                splitPane.getItems().setAll(previewArea);
-                break;
-            case BOTH:
-                setupBindings();
-                splitPane.getItems().setAll(editorArea, previewArea);
-                break;
-        }
-    }
-
-    private void autoScrollChange(boolean autoScroll) {
-        if (autoScroll) {
-            //TODO: implement auto-scroll
-            //ScrollBar editorBar = editorArea.getVBar();
-            //editorBar.valueProperty().bindBidirectional(previewArea.vvalueProperty());
-        }
+    @Override
+    protected Skin<?> createDefaultSkin() {
+        return new MarkdownEditorSkin(this);
     }
 
     public ViewMode getViewMode() {
