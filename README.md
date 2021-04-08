@@ -38,13 +38,13 @@ As mentioned, the control supports multiple view modes.
 Each view mode is represented by the enum: `com.dansoftware.mdeditor.MarkdownEditorControl.ViewMode`.  
 It can be set using the `MarkdownEditorControl#setViewMode` method.
 
-#### 1. Editor only (`ViewMode.EDITOR_ONLY`)
+### 1. Editor only (`ViewMode.EDITOR_ONLY`)
 In this mode, only the editor-area is visible.
 
 ![Screenshot](screenshots/EditorOnly.jpg)
 
 
-#### 2. Preview only (`ViewMode.PREVIEW_ONLY`)
+### 2. Preview only (`ViewMode.PREVIEW_ONLY`)
 In this mode, only the preview-area is visible.
 
 ![Screenshot](screenshots/PreviewOnly.jpg)
@@ -55,8 +55,8 @@ In this mode, only the preview-area is visible.
 
 # Demos
 
-* [LightDemo](src/test/java/com/dansoftware/mdeditor/LightDemo.java) - Light-style example
-* [DarkDemo](src/test/java/com/dansoftware/mdeditor/DarkDemo.java) - Dark-style example
+* [LightDemo](src/test/java/com/dansoftware/mdeditor/test/LightDemo.java) - Light-style example
+* [DarkDemo](src/test/java/com/dansoftware/mdeditor/test/DarkDemo.java) - Dark-style example
 
 # Used libraries
 
