@@ -34,10 +34,13 @@ class Toolbar extends HBox {
 
     private static class LeftPart extends javafx.scene.control.ToolBar {
 
+        private static final String STYLE_CLASS = "left";
+
         private final MarkdownEditorControl control;
 
         LeftPart(MarkdownEditorControl control) {
             this.control = control;
+            this.getStyleClass().add(STYLE_CLASS);
             this.getStyleClass().add("background");
             this.buildUI();
             HBox.setHgrow(this, Priority.ALWAYS);
@@ -88,6 +91,8 @@ class Toolbar extends HBox {
 
     private static class RightPart extends javafx.scene.control.ToolBar {
 
+        private static final String STYLE_CLASS = "right";
+
         private final MarkdownEditorControl control;
         private final ToggleGroup toggleGroup;
 
@@ -95,6 +100,7 @@ class Toolbar extends HBox {
             this.control = control;
             this.toggleGroup = new ToggleGroup();
             this.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+            this.getStyleClass().add(STYLE_CLASS);
             this.getStyleClass().add("background");
             this.buildUI();
             HBox.setHgrow(this, Priority.ALWAYS);
