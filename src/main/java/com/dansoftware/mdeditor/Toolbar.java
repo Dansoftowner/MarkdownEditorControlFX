@@ -51,23 +51,24 @@ class Toolbar extends HBox {
         }
 
         private Button buildBoldItem() {
-            return buildFormatterButton("**%s**", MaterialDesignIcon.FORMAT_BOLD);
+            return buildFormatterButton("**%s**", "bold-item", MaterialDesignIcon.FORMAT_BOLD);
         }
 
         private Button buildItalicItem() {
-            return buildFormatterButton("*%s*", MaterialDesignIcon.FORMAT_ITALIC);
+            return buildFormatterButton("*%s*", "italic-item", MaterialDesignIcon.FORMAT_ITALIC);
         }
 
         private Button buildStrikeThroughItem() {
-            return buildFormatterButton("~~%s~~", MaterialDesignIcon.FORMAT_STRIKETHROUGH);
+            return buildFormatterButton("~~%s~~", "strike-through-item", MaterialDesignIcon.FORMAT_STRIKETHROUGH);
         }
 
         private Button buildMonospaceItem() {
-            return buildFormatterButton("`%s`", MaterialDesignIcon.CODE_TAGS);
+            return buildFormatterButton("`%s`", "monospace-item", MaterialDesignIcon.CODE_TAGS);
         }
 
-        private Button buildFormatterButton(String pattern, MaterialDesignIcon icon) {
+        private Button buildFormatterButton(String pattern, String id, MaterialDesignIcon icon) {
             Button button = buildButton(new MaterialDesignIconView(icon));
+            button.setId(id);
             button.setOnAction(e -> {
                 IndexRange range = control.selectionProperty().getValue();
                 String selected = control.selectedTextProperty().getValue();
