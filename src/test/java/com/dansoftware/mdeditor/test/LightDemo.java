@@ -19,6 +19,7 @@ public class LightDemo extends Application {
         MarkdownEditorControl control = new MarkdownEditorControl();
         control.setToolbarVisible(true);
         control.setMarkdown(DEFAULT_MD);
+        control.setOnLinkClicked(System.out::println);
 
         Scene scene = new Scene(control);
         addKeyDetections(scene, control);

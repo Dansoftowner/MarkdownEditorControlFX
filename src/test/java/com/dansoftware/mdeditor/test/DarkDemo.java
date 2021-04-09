@@ -10,6 +10,9 @@ import javafx.stage.Stage;
 import jfxtras.styles.jmetro.JMetro;
 import jfxtras.styles.jmetro.Style;
 
+import java.io.IOException;
+import java.net.URI;
+
 public class DarkDemo extends Application {
 
     private static final String DEFAULT_MD = "# Heading 1";
@@ -19,6 +22,7 @@ public class DarkDemo extends Application {
         MarkdownEditorControl control = new MarkdownEditorControl();
         control.setToolbarVisible(true);
         control.setMarkdown(DEFAULT_MD);
+        control.setOnLinkClicked(System.out::println);
 
         Scene scene = new Scene(control);
         addKeyDetections(scene, control);
