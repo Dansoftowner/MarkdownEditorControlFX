@@ -127,6 +127,8 @@
     -mdfx-bg-color-1: #484848;
     -mdfx-bg-color-2: #3c3c3c;
     -mdfx-bg-color-3: #303030;
+
+    -mdfx-link-color: #0e80d4;
 }
 
 .markdown-italic {
@@ -140,12 +142,12 @@
     -fx-font-family: "Jetbrains Mono";
 }
 
-* .markdown-link {
-    -fx-fill: #0e80d4;
-}
-
 .markdown-link-hover {
     -fx-underline: true;
+}
+
+.markdown-strikethrough {
+    -fx-strikethrough: true;
 }
 
 .markdown-preview-area .mdfx-node {
