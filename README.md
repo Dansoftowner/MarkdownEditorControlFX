@@ -102,5 +102,8 @@ In this mode, only the preview-area is visible.
 Used libraries for the demos:
 * [JMetro](https://www.pixelduke.com/java-javafx-theme-jmetro/)
 
+# Feedback
+If you use this library in your project, let me know in the [discussions](https://github.com/Dansoftowner/MarkdownEditorControlFX/discussions)!
+
 # License
 **Apache 2.0**
