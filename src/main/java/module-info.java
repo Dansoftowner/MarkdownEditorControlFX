@@ -6,7 +6,6 @@ module markdown.editor.control.fx {
     requires javafx.controls;
     requires flowless;
     requires org.fxmisc.richtext;
-    requires de.jensd.fx.fontawesomefx.fontawesome;
     requires de.jensd.fx.fontawesomefx.materialdesignicons;
     requires de.jensd.fx.fontawesomefx.commons;
 }
