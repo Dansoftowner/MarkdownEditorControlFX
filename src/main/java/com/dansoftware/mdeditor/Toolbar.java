@@ -3,6 +3,8 @@ package com.dansoftware.mdeditor;
 import de.jensd.fx.glyphs.GlyphIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.NodeOrientation;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -73,6 +75,15 @@ class Toolbar extends HBox {
 
         private Button buildFormatterButton(String pattern, String id, MaterialDesignIcon icon) {
             Button button = buildButton(new MaterialDesignIconView(icon));
+            control.skinProperty().addListener(new ChangeListener<>() {
+                @Override
+                public void changed(ObservableValue<? extends Skin<?>> observable, Skin<?> oldValue, Skin<?> newValue) {
+                    if (newValue != null) {
+                        control.selectedTextProperty().addListener((obs, old, selected) -> button.setDisable(selected.contains("\n")));
+                        observable.removeListener(this);
+                    }
+                }
+            });
             button.setId(id);
             button.setOnAction(e -> formatText(pattern));
             return button;
