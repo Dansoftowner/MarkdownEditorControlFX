@@ -89,6 +89,17 @@ In this mode, only the preview-area is visible.
 
 ![Screenshot](screenshots/EditorAndPreview.jpg)
 
+# Basic usage
+
+```java
+MarkdownEditorControl control = new MarkdownEditorControl();
+control.setToolbarVisible(true); // setting the toolbar visible on the top
+control.setMarkdown("# Default "); // setting an initial text
+
+// ...add it to your container or whatever
+container.getChildren().add(control);
+```
+
 # Demos
 
 * [LightDemo](src/test/java/com/dansoftware/mdeditor/test/LightDemo.java) - Light-style example
