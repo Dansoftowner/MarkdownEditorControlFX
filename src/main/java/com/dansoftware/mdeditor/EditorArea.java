@@ -40,16 +40,6 @@ class EditorArea extends VirtualizedScrollPane<CodeArea> {
         this.getContent().replaceText(value);
     }
 
-    public ScrollBar getVBar() {
-        try {
-            Field field = VirtualizedScrollPane.class.getDeclaredField("vbar");
-            field.setAccessible(true);
-            return (ScrollBar) field.get(this);
-        } catch (ReflectiveOperationException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     private static CodeArea buildCodeArea() {
         var codeArea = new CodeArea();
         codeArea.setPadding(new Insets(10));

@@ -7,11 +7,11 @@ class PreviewArea extends ScrollPane {
 
     private static final String STYLE_CLASS = "markdown-preview-area";
 
-    private final EditableMDFXNode mdfxNode;
+    private final MDFXNodeImpl mdfxNode;
 
     PreviewArea() {
         this.getStyleClass().add(STYLE_CLASS);
-        this.mdfxNode = new EditableMDFXNode();
+        this.mdfxNode = new MDFXNodeImpl();
         this.buildUI();
     }
 
@@ -22,7 +22,7 @@ class PreviewArea extends ScrollPane {
     }
 
     public StringProperty markdownProperty() {
-        return mdfxNode.markdownProperty();
+        return mdfxNode.mdStringProperty();
     }
 
 }
