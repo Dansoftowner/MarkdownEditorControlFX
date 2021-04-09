@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.sandec:mdfx:0.1.7'
+    implementation 'com.sandec:mdfx:0.1.8'
     implementation 'org.fxmisc.richtext:richtextfx:0.10.6'
     implementation 'de.jensd:fontawesomefx-commons:11.0'
     implementation 'de.jensd:fontawesomefx-fontawesome:4.7.0-11'
