@@ -1,8 +1,6 @@
 package com.dansoftware.mdeditor;
 
 import de.jensd.fx.glyphs.GlyphIcon;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import javafx.geometry.NodeOrientation;
@@ -117,30 +115,30 @@ class Toolbar extends HBox {
         }
 
         private Node buildPreviewItem() {
-            return buildToggleButton("preview-only-item", MarkdownEditorControl.ViewMode.PREVIEW_ONLY, new MaterialDesignIconView(MaterialDesignIcon.IMAGE));
+            return buildToggleButton("preview-only-item", MarkdownEditorControl.ViewMode.PREVIEW_ONLY, MaterialDesignIcon.IMAGE);
         }
 
         private Node buildSplitItem() {
-            return buildToggleButton("both-item", MarkdownEditorControl.ViewMode.BOTH, new MaterialDesignIconView(MaterialDesignIcon.DIVISION_BOX));
+            return buildToggleButton("both-item", MarkdownEditorControl.ViewMode.BOTH, MaterialDesignIcon.DIVISION_BOX);
         }
 
         private Node buildEditorItem() {
-            return buildToggleButton("editor-only-item", MarkdownEditorControl.ViewMode.EDITOR_ONLY, new FontAwesomeIconView(FontAwesomeIcon.BARS));
+            return buildToggleButton("editor-only-item", MarkdownEditorControl.ViewMode.EDITOR_ONLY, MaterialDesignIcon.TEXTBOX);
         }
 
         //TODO: tooltips
 
-        private RadioButton buildToggleButton(String id, GlyphIcon<?> icon) {
+        private RadioButton buildToggleButton(String id, MaterialDesignIcon icon) {
             RadioButton radioButton = new RadioButton();
             radioButton.setId(id);
-            radioButton.setGraphic(icon);
+            radioButton.setGraphic(new MaterialDesignIconView(icon));
             radioButton.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
             radioButton.getStyleClass().remove("radio-button");
             radioButton.getStyleClass().add("toggle-button");
             return radioButton;
         }
 
-        private RadioButton buildToggleButton(String id, MarkdownEditorControl.ViewMode viewMode, GlyphIcon<?> icon) {
+        private RadioButton buildToggleButton(String id, MarkdownEditorControl.ViewMode viewMode, MaterialDesignIcon icon) {
             RadioButton radioButton = buildToggleButton(id, icon);
             radioButton.setToggleGroup(toggleGroup);
             radioButton.setOnAction(e -> control.setViewMode(viewMode));
