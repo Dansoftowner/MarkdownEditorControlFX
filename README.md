@@ -44,7 +44,7 @@ Java 11 or higher
 <dependency>
 	    <groupId>com.github.Dansoftowner</groupId>
 	    <artifactId>MarkdownEditorControlFX</artifactId>
-	    <version>0.6.2</version>
+	    <version>0.6.3</version>
 </dependency>
 ```
 
@@ -63,7 +63,7 @@ repositories {
 
 ```groovy
 dependencies {
-	implementation 'com.github.Dansoftowner:MarkdownEditorControlFX:0.6.2'
+	implementation 'com.github.Dansoftowner:MarkdownEditorControlFX:0.6.3'
 }
 ```
 
