@@ -40,8 +40,14 @@ class Toolbar extends HBox {
             this.control = control;
             this.getStyleClass().add(STYLE_CLASS);
             this.getStyleClass().add("background");
+            this.initBindings();
             this.buildUI();
             HBox.setHgrow(this, Priority.ALWAYS);
+        }
+
+        private void initBindings() {
+            this.visibleProperty().bind(control.viewModeProperty().isEqualTo(MarkdownEditorControl.ViewMode.PREVIEW_ONLY).not());
+            this.managedProperty().bind(control.viewModeProperty().isEqualTo(MarkdownEditorControl.ViewMode.PREVIEW_ONLY).not());
         }
 
         private void buildUI() {
