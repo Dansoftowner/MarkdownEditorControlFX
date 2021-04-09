@@ -73,7 +73,9 @@ public class MarkdownEditorSkin extends SkinBase<MarkdownEditorControl> {
     }
 
     private PreviewArea buildPreviewArea(MarkdownEditorControl control) {
-        return new PreviewArea();
+        PreviewArea previewArea = new PreviewArea();
+        previewArea.onLinkClickedProperty().bind(control.onLinkClickedProperty());
+        return previewArea;
     }
 
     private void suitUI(MarkdownEditorControl.ViewMode viewMode) {

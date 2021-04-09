@@ -6,6 +6,8 @@ import javafx.scene.control.Control;
 import javafx.scene.control.IndexRange;
 import javafx.scene.control.Skin;
 
+import java.util.function.Consumer;
+
 public class MarkdownEditorControl extends Control {
 
     private final ObjectProperty<MarkdownEditorControl.ViewMode> viewMode = new SimpleObjectProperty<>() {
@@ -19,6 +21,7 @@ public class MarkdownEditorControl extends Control {
     private final BooleanProperty toolbarVisible = new SimpleBooleanProperty();
     private final StringProperty markdown = new SimpleStringProperty("");
     private final BooleanProperty editable = new SimpleBooleanProperty(true);
+    private final ObjectProperty<Consumer<String>> onLinkClicked = new SimpleObjectProperty<>();
 
     public MarkdownEditorControl() {
         this(ViewMode.BOTH);
@@ -75,6 +78,18 @@ public class MarkdownEditorControl extends Control {
 
     public void setMarkdown(String markdown) {
         this.markdown.set(markdown);
+    }
+
+    public Consumer<String> getOnLinkClicked() {
+        return onLinkClicked.get();
+    }
+
+    public ObjectProperty<Consumer<String>> onLinkClickedProperty() {
+        return onLinkClicked;
+    }
+
+    public void setOnLinkClicked(Consumer<String> onLinkClicked) {
+        this.onLinkClicked.set(onLinkClicked);
     }
 
     public ObservableValue<IndexRange> selectionProperty() {

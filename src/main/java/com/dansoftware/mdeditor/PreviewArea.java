@@ -1,7 +1,10 @@
 package com.dansoftware.mdeditor;
 
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.ScrollPane;
+
+import java.util.function.Consumer;
 
 class PreviewArea extends ScrollPane {
 
@@ -23,6 +26,18 @@ class PreviewArea extends ScrollPane {
 
     public StringProperty markdownProperty() {
         return mdfxNode.mdStringProperty();
+    }
+
+    public Consumer<String> getOnLinkClicked() {
+        return mdfxNode.getOnLinkClicked();
+    }
+
+    public ObjectProperty<Consumer<String>> onLinkClickedProperty() {
+        return mdfxNode.onLinkClickedProperty();
+    }
+
+    public void setOnLinkClicked(Consumer<String> onLinkClicked) {
+        this.mdfxNode.setOnLinkClicked(onLinkClicked);
     }
 
 }
