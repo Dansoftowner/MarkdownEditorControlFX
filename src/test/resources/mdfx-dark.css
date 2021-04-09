@@ -124,9 +124,9 @@
     -mdfx-font-color: white;
     -mdfx-border-color-1: #888;
 
-    -mdfx-bg-color-1: #ccc;
-    -mdfx-bg-color-2: #ddd;
-    -mdfx-bg-color-3: #eee;
+    -mdfx-bg-color-1: #484848;
+    -mdfx-bg-color-2: #3c3c3c;
+    -mdfx-bg-color-3: #303030;
 }
 
 .markdown-italic {
@@ -148,6 +148,10 @@
     -fx-underline: true;
 }
 
+.markdown-preview-area .mdfx-node {
+    -fx-padding: 5;
+}
+
 /**********************************************************************
  * Editor styles
  **********************************************************************
@@ -155,6 +159,7 @@
 
 .markdown-edit-area .code-area {
     -fx-background-color: #232425;
+    -fx-padding: 5;
 }
 
 .markdown-edit-area * {

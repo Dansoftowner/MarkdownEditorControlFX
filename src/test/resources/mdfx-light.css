@@ -148,6 +148,10 @@
     -fx-underline: true;
 }
 
+.markdown-preview-area .mdfx-node {
+    -fx-padding: 5;
+}
+
 /**********************************************************************
  * Editor styles
  **********************************************************************
@@ -155,6 +159,7 @@
 
 .markdown-edit-area .code-area {
     -fx-background-color: #f5f3f3;
+    -fx-padding: 5;
 }
 
 .markdown-edit-area * {
