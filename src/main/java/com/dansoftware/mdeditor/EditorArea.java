@@ -34,4 +34,8 @@ class EditorArea extends VirtualizedScrollPane<MarkdownCodeArea> {
         this.getContent().replaceText(value);
     }
 
+    public void selectRange(int from, int to) {
+        getContent().selectRange(from, to);
+    }
+
 }

@@ -107,4 +107,8 @@ public class MarkdownEditorSkin extends SkinBase<MarkdownEditorControl> {
     public void replaceText(int start, int end, String replacement) {
         editorArea.getContent().replaceText(start, end, replacement);
     }
+
+    public void selectRange(int from, int to) {
+        editorArea.selectRange(from, to);
+    }
 }

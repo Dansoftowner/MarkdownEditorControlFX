@@ -104,6 +104,10 @@ public class MarkdownEditorControl extends Control {
         ((MarkdownEditorSkin)getSkin()).replaceText(start, end, replacement);
     }
 
+    public void selectRange(int from, int to) {
+        ((MarkdownEditorSkin) getSkin()).selectRange(from, to);
+    }
+
     public enum ViewMode {
         EDITOR_ONLY, PREVIEW_ONLY, BOTH
     }

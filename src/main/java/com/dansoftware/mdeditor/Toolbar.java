@@ -74,11 +74,7 @@ class Toolbar extends HBox {
         private Button buildFormatterButton(String pattern, String id, MaterialDesignIcon icon) {
             Button button = buildButton(new MaterialDesignIconView(icon));
             button.setId(id);
-            button.setOnAction(e -> {
-                IndexRange range = control.selectionProperty().getValue();
-                String selected = control.selectedTextProperty().getValue();
-                control.replaceText(range.getStart(), range.getEnd(), String.format(pattern, selected));
-            });
+            button.setOnAction(e -> formatText(pattern));
             return button;
         }
 
@@ -87,6 +83,19 @@ class Toolbar extends HBox {
             button.setGraphic(icon);
             button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
             return button;
+        }
+
+        private void formatText(String pattern) {
+            IndexRange range = control.selectionProperty().getValue();
+            int from = range.getStart();
+            int to = range.getEnd();
+
+            String originalText = control.selectedTextProperty().getValue();
+            String formattedText = String.format(pattern, originalText);
+            int originalTextStart = formattedText.indexOf(originalText);
+
+            control.replaceText(from, to, formattedText);
+            control.selectRange(from + originalTextStart, from + originalTextStart + originalText.length());
         }
 
     }
