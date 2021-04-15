@@ -84,6 +84,7 @@ class Toolbar extends HBox {
                     }
                 }
             });
+            button.visibleProperty().bind(control.editableProperty());
             button.setId(id);
             button.setOnAction(e -> formatText(pattern));
             return button;
