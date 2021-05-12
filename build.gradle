@@ -9,6 +9,8 @@ version '0.6.2'
 
 def moduleName = "markdown.editor.control.fx"
 
+mainClassName = ""
+
 javafx {
     version = "11.0.2"
     modules = [ 'javafx.base', 'javafx.graphics', 'javafx.controls' ]
