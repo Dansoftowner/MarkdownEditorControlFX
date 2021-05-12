@@ -1,9 +1,8 @@
 package com.dansoftware.mdeditor;
 
-import com.sandec.mdfx.MDFXNode;
+import com.sandec.mdfx.MarkdownView;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -11,18 +10,18 @@ import javafx.scene.input.MouseButton;
 
 import java.util.function.Consumer;
 
-class MDFXNodeImpl extends MDFXNode {
+class ImprovedMarkdownView extends MarkdownView {
 
     private static final String STYLE_CLASS = "mdfx-node";
 
     private final ObjectProperty<Consumer<String>> onLinkClicked =
             new SimpleObjectProperty<>();
 
-    MDFXNodeImpl() {
+    ImprovedMarkdownView() {
         this("");
     }
 
-    MDFXNodeImpl(String markdown) {
+    ImprovedMarkdownView(String markdown) {
         super(markdown);
         this.getStyleClass().add(STYLE_CLASS);
     }

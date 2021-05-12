@@ -22,17 +22,19 @@ compileJava {
 
 repositories {
     mavenCentral()
-    maven { url "http://sandec.bintray.com/repo"}
-    maven { url "https://dl.bintray.com/jerady/maven" }
+    maven { url "https://sandec.jfrog.io/artifactory/repo" }
     maven { url "https://dl.bintray.com/dukke/maven" }
 }
 
 dependencies {
-    implementation 'com.sandec:mdfx:0.1.9'
+    implementation 'com.sandec:mdfx:0.2.1'
     implementation 'org.fxmisc.richtext:richtextfx:0.10.6'
-    implementation 'de.jensd:fontawesomefx-commons:11.0'
-    implementation 'de.jensd:fontawesomefx-materialdesignfont:1.7.22-11'
+    // implementation 'de.jensd:fontawesomefx-commons:11.0'
+    // implementation 'de.jensd:fontawesomefx-materialdesignfont:1.7.22-11'
+    implementation fileTree(dir: 'local-libs', include: '*.jar')
+
     testImplementation 'org.jfxtras:jmetro:11.6.14'
+
 }
 
 test {
