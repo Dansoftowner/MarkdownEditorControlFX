@@ -1,11 +1,17 @@
 plugins {
     id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
 group 'org.example'
 version '0.6.2'
 
 def moduleName = "markdown.editor.control.fx"
+
+javafx {
+    version = "16"
+    modules = [ 'javafx.base', 'javafx.graphics', 'javafx.controls' ]
+}
 
 compileJava {
     // placing dependencies to the module path
