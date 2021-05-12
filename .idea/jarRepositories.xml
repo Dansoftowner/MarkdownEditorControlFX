@@ -31,5 +31,15 @@
       <option name="name" value="maven2" />
       <option name="url" value="https://dl.bintray.com/jerady/maven" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://sandec.jfrog.io/artifactory/repo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="BintrayJCenter" />
+      <option name="name" value="BintrayJCenter" />
+      <option name="url" value="https://jcenter.bintray.com/" />
+    </remote-repository>
   </component>
 </project>
