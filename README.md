@@ -28,6 +28,12 @@ Contributions are welcome!
 # Requirements
 Java 11 or higher
 
+# Projects using MarkdownEditorControlFX
+
+If you use this library in your project, let me know in the [discussions](https://github.com/Dansoftowner/MarkdownEditorControlFX/discussions)!
+
+* [Boomega](https://github.com/Dansoftowner/Boomega) - A modern book explorer & catalog application
+
 # Download
 
 #### Maven example
@@ -113,9 +119,6 @@ container.getChildren().add(control);
 
 Used libraries for the demos:
 * [JMetro](https://www.pixelduke.com/java-javafx-theme-jmetro/)
-
-# Feedback
-If you use this library in your project, let me know in the [discussions](https://github.com/Dansoftowner/MarkdownEditorControlFX/discussions)!
 
 # License
 **Apache 2.0**
